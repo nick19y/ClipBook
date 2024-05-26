@@ -12,7 +12,7 @@ interface InputProps {
 export default function InputText({ 
     label, 
     placeholder, 
-    secureTextEntry = false
+    secureTextEntry = true
 } : InputProps) : JSX.Element {
   return (
     <FormControl mt={5}>

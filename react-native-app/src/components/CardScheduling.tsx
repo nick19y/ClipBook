@@ -1,4 +1,6 @@
+import { useNavigation } from "expo-router";
 import { VStack, Button, Box, Text } from "native-base";
+import { useState } from "react";
 import { StyleSheet } from "react-native";
 import { Image } from "react-native";
 
@@ -21,7 +23,16 @@ function renderStars(evaluation:number) {
     return stars;
   }
 
-export function CardScheduling({name, image, evaluation, date, attended, scheduled}: CardProps){
+export function CardScheduling({name, image, evaluation, date, attended, scheduled, scheduled: initialScheduled}: CardProps){
+    const navigation:any = useNavigation();
+    const [isScheduled, setIsScheduled] = useState(initialScheduled || false);
+    const handleCancel = () => {
+        setIsScheduled(false);
+    };
+    const handleSchedule = () => {
+        navigation.navigate('ScheduleCut');
+        setIsScheduled(true);
+    };
     return(
         <VStack w={"100%"} bg={attended ? 'lightBeige': 'white'} p={4} shadow={2} mb={10}>
             {/* colocar o mb no last child */}
@@ -35,8 +46,9 @@ export function CardScheduling({name, image, evaluation, date, attended, schedul
                     <Text>Avaliação: {renderStars(evaluation)}</Text>
                 </VStack>
             </VStack>
-            <Button _pressed={{ bg: 'gray.700' }} alignSelf={"center"} w='100%' bg='brown' mt={3}>
-            {scheduled ? 'Cancelar': 'Agendar'}
+            <Button _pressed={{ bg: 'gray.700' }} alignSelf={"center"} w='100%' bg='brown' mt={3}
+            onPress={scheduled ? handleCancel : handleSchedule}>
+            {scheduled ? 'Cancelar' : 'Agendar'}
             </Button>
         </VStack>
     )

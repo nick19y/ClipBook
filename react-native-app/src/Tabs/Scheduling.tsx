@@ -3,7 +3,7 @@ import { CardScheduling } from "../components/CardScheduling";
 import Title from "../components/Title";
 import { Ionicons } from "@expo/vector-icons";
 
-export default function Scheduling(){
+export default function Scheduling({navigation}:{navigation:any}){
     return(
         <Box flex={1}>
             <ScrollView p={5} flex={1}>
@@ -53,13 +53,13 @@ export default function Scheduling(){
                 <Button 
                     bgColor={"brown"} 
                     borderRadius="full"
-                    width={16} 
+                    width={16}
                     height={16} 
                     justifyContent="center" 
                     alignItems="center" 
-                    onPress={() => console.log("Botão de adicionar pressionado")}
+                    onPress={() => navigation.navigate('ScheduleCut')}
                 >
-                    <Ionicons name="add" size={30} style={{ color: "white" }} />
+                    <Ionicons name="add" size={30} style={{ color: "white" }}/>
                 </Button>
             </Box>
         </Box>
