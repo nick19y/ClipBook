@@ -4,7 +4,7 @@ CREATE TABLE user (
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
     CPF VARCHAR(14) NOT NULL,
-    birth_date DATE NOT NULL,
+    birth_date VARCHAR(12) NOT NULL,
     phone_number VARCHAR(20) NOT NULL,
     CEP VARCHAR(10) NOT NULL
 );

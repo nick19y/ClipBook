@@ -22,7 +22,7 @@ public class User {
     private String email;
     private String password;
     private String CPF;
-    private Date birth_date;
+    private String birth_date;
     private String phone_number;
     private String CEP;
 

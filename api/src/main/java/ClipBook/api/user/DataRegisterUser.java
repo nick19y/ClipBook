@@ -15,7 +15,7 @@ public record DataRegisterUser(
         @NotBlank
         String CPF,
         @NotBlank
-        Date birth_date,
+        String birth_date,
         @NotBlank
         String phone_number,
         @NotBlank
