@@ -11,6 +11,7 @@ export default function ScheduleCut(){
             <Title color={"brown"}>Agendar Corte</Title>
             <Box mx={10}>
                 <InputText label="Nome" placeholder="Digite o nome do barbeiro"/>
+                <InputText label="Horário" placeholder="00:00"/>
             </Box>
             <Title>Selecione a data do corte</Title>
             <Box mx={8} mt={5}>
@@ -21,7 +22,6 @@ export default function ScheduleCut(){
                     // '2024-05-01': {selected: true, marked: true, selectedColor: 'blue'},
                     [selected]: {selected: true, disableTouchEvent: true, selectedColor: 'black'}
                 }}/>
-                <InputText label="Horário" placeholder="00:00"/>
             </Box>
             
             <Button _pressed={{ bg: 'gray.700' }} alignSelf={"center"} w='50%' bg='brown' mt={10}>Agendar corte</Button>
