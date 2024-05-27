@@ -1,6 +1,6 @@
-package ClipBook.api.employee;
+package ClipBook.api.domain.employee;
 
-import ClipBook.api.address.Address;
+import ClipBook.api.domain.address.Address;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

@@ -1,4 +1,4 @@
-package ClipBook.api.address;
+package ClipBook.api.domain.address;
 
 import jakarta.validation.constraints.NotBlank;
 

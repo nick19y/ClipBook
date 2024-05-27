@@ -1,4 +1,4 @@
-package ClipBook.api.address;
+package ClipBook.api.domain.address;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

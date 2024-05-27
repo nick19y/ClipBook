@@ -1,6 +1,6 @@
-package ClipBook.api.employee;
+package ClipBook.api.domain.employee;
 
-import ClipBook.api.address.DataAddress;
+import ClipBook.api.domain.address.DataAddress;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 

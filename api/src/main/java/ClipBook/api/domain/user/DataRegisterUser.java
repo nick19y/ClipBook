@@ -1,4 +1,4 @@
-package ClipBook.api.user;
+package ClipBook.api.domain.user;
 
 import jakarta.validation.constraints.NotBlank;
 import org.aspectj.weaver.ast.Not;
@@ -11,7 +11,7 @@ public record DataRegisterUser(
         @NotBlank
         String email,
         @NotBlank
-        String password,
+        String user_password,
         @NotBlank
         String CPF,
         @NotBlank
@@ -19,6 +19,8 @@ public record DataRegisterUser(
         @NotBlank
         String phone_number,
         @NotBlank
-        String CEP
+        String CEP,
+        @NotBlank
+        String login
     ) {
 }

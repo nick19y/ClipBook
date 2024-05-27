@@ -1,4 +1,4 @@
-package ClipBook.api.employee;
+package ClipBook.api.domain.employee;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
