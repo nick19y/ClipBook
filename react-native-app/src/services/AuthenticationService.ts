@@ -9,10 +9,10 @@ export async function SignIn(login:string, user_password:string){
             login,
             user_password
         });
-        console.log(result.data);
+        // console.log(result.data);
         return result.data;
     }catch(error){
-        console.log(error);
+        // console.log(error);
         return null
     }
 }

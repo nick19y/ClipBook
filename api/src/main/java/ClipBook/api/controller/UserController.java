@@ -20,7 +20,7 @@ public class UserController {
     @Transactional
     public void register(@RequestBody @Valid DataRegisterUser data){
         String hashedPassword = passwordEncoder.encode(data.user_password());
-        repository.save(new User(data.name(), data.email(), hashedPassword, data.CPF(), data.birth_date(), data.phone_number(), data.CEP(), data.login()));
+        repository.save(new User(data.name(), hashedPassword, data.CPF(), data.birth_date(), data.phone_number(), data.CEP(), data.login()));
     }
 
 }

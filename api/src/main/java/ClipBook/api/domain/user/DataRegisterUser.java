@@ -9,8 +9,6 @@ public record DataRegisterUser(
         @NotBlank
         String name,
         @NotBlank
-        String email,
-        @NotBlank
         String user_password,
         @NotBlank
         String CPF,

@@ -1,4 +1,4 @@
-import { VStack, Image, Text, Box, FormControl, Input, Button, Center, Link } from "native-base";
+import { VStack, Image, Text, Box, FormControl, Input, Button, Center, Link, useToast } from "native-base";
 import Scissors from './assets/scissors32.png';
 import Logo from "./components/Logo";
 import { TouchableOpacity } from "react-native";
@@ -9,13 +9,19 @@ import { SignIn } from "./services/AuthenticationService";
 export default function Login({navigation}:any) {
   const [login, setLogin] = useState('');
   const [user_password, setPassword] = useState('');
+  const toast = useToast();
 
   async function singIn(){
     const result = await SignIn(login, user_password)
     if(result){
-      navigation.navigate('Tabs');
+      navigation.replace('Tabs');
     } else{
-      console.log('Erro');
+      toast.show({
+        title: "Erro ao efetuar login",
+        description: "Email ou senha não conferem",
+        backgroundColor:"red.500",
+        textAlign:"center"
+      })
     }
   }
   return (

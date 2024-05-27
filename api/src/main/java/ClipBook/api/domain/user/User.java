@@ -23,7 +23,6 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String email;
     private String user_password;
     private String CPF;
     private String birth_date;
@@ -32,9 +31,8 @@ public class User implements UserDetails {
     @Column(name = "login")
     private String login;
 
-    public User(String name, String email, String user_password, String CPF, String birth_date, String phone_number, String CEP, String login) {
+    public User(String name, String user_password, String CPF, String birth_date, String phone_number, String CEP, String login) {
         this.name = name;
-        this.email = email;
         this.user_password = user_password;
         this.CPF = CPF;
         this.birth_date = birth_date;
