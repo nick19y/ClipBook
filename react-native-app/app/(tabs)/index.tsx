@@ -5,10 +5,10 @@ import Routes from '@/src/Routes';
 import { useEffect } from 'react';
 import api from '@/src/services/api';
 
-export default function HomeScreen() {
+export default function App() {
   useEffect(() => {
     async function pegarDados(){
-        const resultado = await api.get('/employee')
+        const resultado = await api.get('/user')
             console.log(resultado.data)
     }
         pegarDados()
