@@ -17,7 +17,6 @@ public class UserService {
     @Transactional
     public User createUser(DataRegisterUser data) {
         String hashedPassword = passwordEncoder.encode(data.user_password());
-        User user = new User(data.name(), hashedPassword, data.CPF(), data.birth_date(), data.phone_number(), data.CEP(), data.login());
-        return userRepository.save(user);
+        User user = new User(data.name(), hashedPassword, data.CPF(), data.birth_date(), data.phone_number(), data.CEP(), data.login());        return userRepository.save(user);
     }
 }

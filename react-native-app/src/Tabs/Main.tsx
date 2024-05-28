@@ -2,14 +2,36 @@ import { VStack, Text, Divider, Box, Button } from "native-base";
 import Title from "../components/Title";
 import Logo from "../components/Logo";
 import { Calendar } from "react-native-calendars";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { getUserData } from "../services/UserService";
+import { User } from "../interfaces/User";
 export default function Main({navigation}: {navigation:any}){
     const [selected, setSelected] = useState('');
+    const[userData, setUserData] = useState({} as User)
+    useEffect(()=>{
+        async function userData(){
+            const userId = await AsyncStorage.getItem('userId')
+            if(!userId){
+                return null;
+            }
+            const result = await getUserData(userId);
+            if(result){
+                setUserData(result);
+            }
+        }
+        userData();
+    }, []);
+    
+    const getFirstName = (fullName: string) => {
+        return fullName.split(' ')[0];
+    };
+    
     return(
         <VStack>
             <Box py={10} px={20} mx={19}>
                 <Logo></Logo>
-                <Title color={"black"} fontSize={20} textAlign={"center"}>Bem vindo, Nícolas!</Title>
+                <Title color={"black"} fontSize={20} textAlign={"center"}>Bem vindo, {userData.name ? getFirstName(userData.name) : ''}!</Title>
             </Box>
             <Divider/>
             <Box mb={5}>

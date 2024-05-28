@@ -13,3 +13,14 @@ export async function registerUser(user:User){
         return null;
     }
 }
+export async function getUserData(id:string){
+    try{
+        const result = await api.get(`/user/${id}`)
+        return result.data;
+    }
+    catch(error){
+        console.log(error)
+        return null
+    }
+}
+getUserData("1");
