@@ -15,9 +15,18 @@ import java.util.Date;
 public class Haircut {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String barberName;
+    private String barber_name;
     private BigDecimal price;
-    private Date appointmentDate;
-    private Time appointmentTime;
-    private int userId;
+    private Date appointment_date;
+    private Time appointment_time;
+    private int user_id;
+
+    public Haircut(DataRegisterHaircut data){
+        this.barber_name = data.barber_name();
+        this.price = data.price();
+        this.appointment_date = data.appointment_date();
+        this.appointment_time = data.appointment_time();
+        this.user_id = data.user_id();
+    }
+
 }
