@@ -24,22 +24,22 @@ const screenOptions = {
 
 const tabs=[
     {
-        name: 'Main',
+        name: 'Home',
         component: Main,
         icon:'home'
     },
     {
-        name: 'Scheduling',
+        name: 'Agendamentos',
         component: Scheduling,
         icon:'calendar'
     },
     {
-        name: 'Explore',
+        name: 'Buscar',
         component: Explore,
         icon:'search'
     },
     {
-        name: 'Profile',
+        name: 'Perfil',
         component: Profile,
         icon:'person'
     }

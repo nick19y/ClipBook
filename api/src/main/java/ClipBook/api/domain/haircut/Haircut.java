@@ -6,9 +6,9 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.sql.Time;
-import java.util.Date;
+import java.time.LocalDate;
 
-@Table(name="HaircutAppointments")
+@Table(name="haircut")
 @Entity(name="Haircut")
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,7 +17,7 @@ public class Haircut {
     private int id;
     private String barber_name;
     private BigDecimal price;
-    private Date appointment_date;
+    private LocalDate appointment_date;  // Usando LocalDate em vez de Date
     private Time appointment_time;
     private int user_id;
 

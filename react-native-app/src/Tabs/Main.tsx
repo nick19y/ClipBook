@@ -29,12 +29,12 @@ export default function Main({navigation}: {navigation:any}){
     
     return(
         <VStack>
-            <Box py={10} px={20} mx={19}>
+            <Box py={7} px={20} mx={19}>
                 <Logo></Logo>
                 <Title color={"black"} fontSize={20} textAlign={"center"}>Bem vindo, {userData.name ? getFirstName(userData.name) : ''}!</Title>
             </Box>
             <Divider/>
-            <Box mb={5}>
+            <Box mb={2}>
                 <Title>Seu último corte: 22/05/2024</Title>
             </Box>
             <Box mx={5}>

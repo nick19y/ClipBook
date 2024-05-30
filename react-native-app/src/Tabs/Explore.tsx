@@ -68,6 +68,7 @@ export default function Explore({ navigation }: { navigation: any }) {
                                 key={employee.id}
                                 name={employee.name}
                                 evaluation={employee.evaluation}
+                                id={employee.id}
                             />
                         ))
                     ) : (
@@ -76,6 +77,7 @@ export default function Explore({ navigation }: { navigation: any }) {
                                 key={employee.id}
                                 name={employee.name}
                                 evaluation={employee.evaluation}
+                                id={employee.id}
                             />
                         ))
                     )}
