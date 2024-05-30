@@ -46,7 +46,7 @@ export default function Main({navigation}: {navigation:any}){
                     // [selected]: {selected: true, disableTouchEvent: true, selectedColor: 'black'}
                 }}/>
             </Box>
-            <Button _pressed={{ bg: 'gray.700' }} alignSelf={"center"} w='50%' bg='brown' mt={10} onPress={()=>navigation.navigate('ScheduleCut')}>Agendar corte</Button>
+            <Button _pressed={{ bg: 'gray.700' }} alignSelf={"center"} w='50%' bg='brown' mt={10} onPress={()=>navigation.navigate('Buscar')}>Agendar corte</Button>
         </VStack>
     )
 }

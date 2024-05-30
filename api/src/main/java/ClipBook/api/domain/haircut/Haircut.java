@@ -2,6 +2,7 @@ package ClipBook.api.domain.haircut;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
@@ -10,6 +11,7 @@ import java.time.LocalDate;
 
 @Table(name="haircut")
 @Entity(name="Haircut")
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Haircut {
@@ -17,7 +19,7 @@ public class Haircut {
     private int id;
     private String barber_name;
     private BigDecimal price;
-    private LocalDate appointment_date;  // Usando LocalDate em vez de Date
+    private LocalDate appointment_date;
     private Time appointment_time;
     private int user_id;
 

@@ -14,3 +14,20 @@ export async function scheduleHaircut(haircut: Haircut){
         return null;
     }
 }
+export async function listHaircut(): Promise<Haircut[]>{
+    try{
+        const result = await api.get(`/haircut`);
+        return result.data;
+    } catch(error){
+        console.log(error);
+        return [];
+    }
+}
+export async function deleteHaircut(id: number): Promise<boolean> {
+    try {
+        const result = await api.delete(`/haircut/${id}`);
+        return true;
+    } catch (error) {
+        return false;
+    }
+}

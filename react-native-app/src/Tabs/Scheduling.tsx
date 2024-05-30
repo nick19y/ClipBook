@@ -2,47 +2,47 @@ import { VStack, Box, Text, Button, Icon, ScrollView, Divider } from "native-bas
 import { CardScheduling } from "../components/CardScheduling";
 import Title from "../components/Title";
 import { Ionicons } from "@expo/vector-icons";
+import { useEffect, useState } from "react";
+import { Haircut } from "../interfaces/Haircut";
+import { listHaircut } from "../services/HaircutService";
 
 export default function Scheduling({navigation}:{navigation:any}){
+    const [haircutList, setHaircutList] = useState<Haircut[]>([]);
+
+    const listHaircuts = async () => {
+        const result:any = await listHaircut();
+        setHaircutList(result);
+    };
+
+    useEffect(()=>{
+        listHaircuts();
+    }, []);
+
+    const handleReload = () => {
+        listHaircuts();
+    };
+
+    handleReload();
     return(
         <Box flex={1}>
             <ScrollView p={5} flex={1}>
                 <Title color={"brown"} fontSize={30} mb={5}>Meus cortes</Title>
                 <Divider/>
                 <Title mb={5}>Agendados</Title>
-                <CardScheduling
-                    name='João Mário'
-                    date="10/07/2024"
-                    evaluation={4}
-                    scheduled
-                />
-                <Divider></Divider>
+                {haircutList.map((haircut: Haircut)=>(
+                    <CardScheduling
+                        key={haircut.id}
+                        id={haircut.id}
+                        name={haircut.barber_name}
+                        date={haircut.appointment_date}
+                        appointment_time={haircut.appointment_time}
+                        scheduled
+                    />
+                ))}
+                <Divider/>
                 <Title mb={5}>Cortes finalizados</Title>
                 <CardScheduling
-                    name='Gabriel Barbosa'
-                    date="20/08/2024"
-                    evaluation={5}
-                    attended
-                />
-                <CardScheduling
-                    name='Gabriel Barbosa'
-                    date="20/08/2024"
-                    evaluation={5}
-                    attended
-                />
-                <CardScheduling
-                    name='Gabriel Barbosa'
-                    date="20/08/2024"
-                    evaluation={5}
-                    attended
-                />
-                <CardScheduling
-                    name='Gabriel Barbosa'
-                    date="20/08/2024"
-                    evaluation={5}
-                    attended
-                />
-                <CardScheduling
+                    id={2}
                     name='Gabriel Barbosa'
                     date="20/08/2024"
                     evaluation={5}
@@ -57,7 +57,7 @@ export default function Scheduling({navigation}:{navigation:any}){
                     height={16} 
                     justifyContent="center" 
                     alignItems="center" 
-                    onPress={() => navigation.navigate('ScheduleCut')}
+                    onPress={() => navigation.navigate('Buscar')}
                 >
                     <Ionicons name="add" size={30} style={{ color: "white" }}/>
                 </Button>

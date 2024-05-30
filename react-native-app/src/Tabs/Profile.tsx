@@ -42,8 +42,7 @@ export default function Profile({navigation}:any){
                     <Text>Telefone: {userData.phone_number}</Text>
                 </Box>
                 <Divider mt={15}/>
-                <Button _pressed={{ bg: 'gray.700' }} alignSelf={"center"} w='50%' bg='brown' mt={10}>Atualizar dados</Button>
-                <Button _pressed={{ bg: 'gray.700' }} alignSelf={"center"} w='50%' bg='gray.500' mt={5} onPress={logout}>Sair</Button>
+                <Button _pressed={{ bg: 'gray.700' }} alignSelf={"center"} w='50%' bg='gray.500' mt={20} onPress={logout}>Sair</Button>
             </VStack>
         </ScrollView>
     )

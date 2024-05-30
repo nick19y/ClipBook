@@ -12,15 +12,12 @@ interface InputProps {
 }
 
 function formatTimeInput(value: string): string {
-    // Remove qualquer caractere que não seja dígito
     let cleaned = value.replace(/\D/g, '');
 
-    // Limitar a 6 dígitos no máximo
     if (cleaned.length > 6) {
         cleaned = cleaned.substring(0, 6);
     }
 
-    // Adicionar ":" após cada dois dígitos
     let formatted = cleaned;
     if (cleaned.length > 2) {
         formatted = cleaned.slice(0, 2) + ':' + cleaned.slice(2);
