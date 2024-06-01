@@ -10,6 +10,7 @@ export async function registerUser(user:User){
         return result.data;
     }
     catch(error){
+        console.log(error)
         return null;
     }
 }

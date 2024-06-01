@@ -1,5 +1,4 @@
 import { useNavigation } from "@react-navigation/native";
-import { format } from "date-fns";
 import { VStack, Box, Text, Button, Image, useToast } from "native-base";
 import { useState } from "react";
 import { deleteHaircut } from "../services/HaircutService";

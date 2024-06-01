@@ -7,7 +7,6 @@ export async function scheduleHaircut(haircut: Haircut){
     }
     try{
         const result = await api.post('/haircut', haircut);
-        console.log("funciona")
         return result.data;
     } catch(error){
         console.log(error);

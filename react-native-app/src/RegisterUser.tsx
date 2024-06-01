@@ -94,6 +94,7 @@ export default function RegisterUser() {
   }
 
   async function register({navigation} : {navigation:any}){
+    console.log("Dados enviados:", data);
     const result = await registerUser({
       name: data.name,
       user_password: data.user_password,

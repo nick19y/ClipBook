@@ -7,10 +7,21 @@ import { useRoute } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { scheduleHaircut } from "./services/HaircutService";
 import { useNavigation } from "expo-router";
+import InputTextTime from "./components/InputTextTime";
 
 interface Params {
     name?: string;
     id?: string;
+}
+
+interface Haircut {
+    id: any;
+    barber_name: string;
+    appointment_date: string;
+    appointment_time: any;
+    user_id: number;
+    price: number;
+    finalized: boolean;
 }
 
 export default function ScheduleCut() {
@@ -35,6 +46,8 @@ export default function ScheduleCut() {
             appointment_date: selected,
             appointment_time: data.appointment_time,
             user_id: user_id,
+            price: 50,  // Adicionando o preço padrão
+            finalized: false  // Definindo como não finalizado
         });
 
         toast.show({
@@ -63,7 +76,7 @@ export default function ScheduleCut() {
                     placeholder="Digite o nome do barbeiro"
                     onChangeText={(text) => updateData('name', text)}
                 />
-                <InputText 
+                <InputTextTime 
                     label="Horário" 
                     placeholder="00:00:00" 
                     value={data.appointment_time}

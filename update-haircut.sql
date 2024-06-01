@@ -1,0 +1,1 @@
+UPDATE haircut SET finalized = 1 WHERE id = (coloque o id do corte aqui);

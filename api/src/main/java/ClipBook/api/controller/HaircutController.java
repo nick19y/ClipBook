@@ -35,4 +35,11 @@ public class HaircutController {
     public void delete(@PathVariable Long id){
         repository.deleteById(id);
     }
+    @GetMapping("/finalized")
+    public List<DataListHaircut> getFinalizedHaircuts() {
+        List<Haircut> haircuts = repository.findByFinalizedTrue();
+        return haircuts.stream()
+                .map(DataListHaircut::new)
+                .collect(Collectors.toList());
+    }
 }

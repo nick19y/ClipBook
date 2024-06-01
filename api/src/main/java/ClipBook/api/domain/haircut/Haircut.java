@@ -22,6 +22,7 @@ public class Haircut {
     private LocalDate appointment_date;
     private Time appointment_time;
     private int user_id;
+    private boolean finalized;
 
     public Haircut(DataRegisterHaircut data){
         this.barber_name = data.barber_name();
@@ -29,6 +30,9 @@ public class Haircut {
         this.appointment_date = data.appointment_date();
         this.appointment_time = data.appointment_time();
         this.user_id = data.user_id();
+        this.finalized = false;
     }
-
+    public boolean isFinalized() {
+        return finalized;
+    }
 }
